@@ -109,6 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const slideCount = slides.length;
     let slideInterval;
 
+    // Touch/swipe variables
+    let startX = 0;
+    let endX = 0;
+    let isDragging = false;
+
     // Initialize the slideshow
     function startSlideshow() {
       slideInterval = setInterval(nextSlide, 6000);
@@ -164,6 +169,46 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(index);
         startSlideshow();
       });
+    });
+
+    // Touch events for mobile swiping
+    slideshow.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      clearInterval(slideInterval); // Pause autoplay when touching
+    });
+
+    slideshow.addEventListener("touchmove", function (e) {
+      if (!isDragging) return;
+      e.preventDefault(); // Prevent scrolling while swiping
+    });
+
+    slideshow.addEventListener("touchend", function (e) {
+      if (!isDragging) return;
+
+      endX = e.changedTouches[0].clientX;
+      isDragging = false;
+
+      const threshold = 50; // Minimum distance for a swipe
+      const diff = startX - endX;
+
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          // Swiped left - go to next slide
+          nextSlide();
+        } else {
+          // Swiped right - go to previous slide
+          prevSlide();
+        }
+      }
+
+      startSlideshow(); // Resume autoplay
+    });
+
+    // Prevent accidental swipes when user is just trying to scroll
+    slideshow.addEventListener("touchcancel", function () {
+      isDragging = false;
+      startSlideshow();
     });
 
     // Start the slideshow

@@ -391,7 +391,7 @@ nav {
 
 .dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -399,11 +399,11 @@ nav {
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 5px;
+  margin: 0 8px;
   cursor: pointer;
 }
 
@@ -615,11 +615,11 @@ footer {
 
 @media (max-width: 768px) {
   header .container {
-    padding: 0.8rem 1.5rem;
+    flex-direction: column;
   }
 
   .logo img {
-    height: 50px;
+    width: 50px;
   }
 
   .desktop-menu {
@@ -631,11 +631,8 @@ footer {
   }
 
   .slide-content {
-    left: 0;
-    width: 100%;
-    max-width: none;
-    text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
+    bottom: 80px;
   }
 
   .slide-content h1 {
@@ -643,7 +640,8 @@ footer {
   }
 
   .welcome,
-  .services {
+  .services,
+  .cta {
     padding: 3rem 0;
   }
 
@@ -653,10 +651,10 @@ footer {
     font-size: 2rem;
   }
 
+  /* Hide slideshow arrows on mobile */
   .prev-btn,
   .next-btn {
-    width: 40px;
-    height: 40px;
+    display: none;
   }
 
   .footer-content {
@@ -691,6 +689,17 @@ footer {
   .about-content,
   .about-image {
     flex: 1 0 100%;
+  }
+
+  /* Make dots more touch-friendly on mobile */
+  .dots {
+    bottom: 15px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+    margin: 0 8px;
   }
 }
 
