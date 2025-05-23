@@ -1,110 +1,148 @@
 # Kernen Construction Website
 
-A modern, responsive website for Kernen Construction showcasing their construction services in Northern California. This website features interactive animations, parallax effects, and fade-in elements to enhance user experience.
+A modern, responsive website for Kernen Construction, showcasing their comprehensive construction services in Northern California.
 
-## Features
+## 🌐 Live Website
 
-- Modern, responsive design that works on all devices
-- Interactive animations and hover effects
-- Parallax scrolling effects
-- Fade-in elements as you scroll
-- Mobile-friendly navigation with dropdown menus
-- Image slideshow on the homepage
-- Detailed service pages with related services
-- Optimized images and fast loading times
+Visit the live website: [kernen-construction.netlify.app](https://kernen-construction.netlify.app)
 
-## File Structure
+## 🚀 Features
+
+### 🎨 Design & User Experience
+
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Modern UI**: Clean, professional design with intuitive navigation
+- **Fast Loading**: Optimized images and efficient CSS/JS
+- **Accessibility**: Semantic HTML and proper contrast ratios
+
+### 📱 Pages & Functionality
+
+- **Home Page**: Company overview with hero section and service highlights
+- **About Us**: Company history and team information
+- **Services**: Comprehensive overview of all construction services
+- **Individual Service Pages**: Detailed pages for each service with image galleries
+- **Careers**: Employment opportunities and application forms
+- **Contact**: Multiple ways to get in touch with the company
+
+### 🛠️ Service Pages
+
+Each service has its own dedicated page with:
+
+- Service overview and descriptions
+- Image galleries showcasing completed projects
+- Detailed service lists and capabilities
+- Contact information specific to that service
+- Related services suggestions
+
+**Available Services:**
+
+- Bridges
+- Concrete Construction
+- Varco Pruden Metal Buildings
+- Machine Shop/Welding/Repairs
+- Excavating/Grading/Paving
+- Rock & Asphalt Products/Services
+- Trucking and Lowboy Services
+
+### 🎯 Recent Improvements (Latest Update)
+
+- **Enhanced Service Page Layout**: Fixed card centering issues for better visual balance
+- **Responsive Card Design**: Cards now properly adapt to different screen sizes
+- **Improved Sticky Sidebar**: Better navigation experience on larger screens
+- **Optimized Card Sizing**: Wider cards on large screens for better proportions
+- **Cross-Browser Compatibility**: Ensured consistent experience across all browsers
+
+## 🛠️ Technical Stack
+
+- **HTML5**: Semantic markup with accessibility features
+- **CSS3**: Modern layouts with Flexbox and Grid
+- **JavaScript**: Interactive features and animations
+- **Responsive Design**: Mobile-first approach
+- **Performance Optimized**: Compressed images and efficient code
+
+## 📁 Project Structure
 
 ```
-Kernen Construction/
-│
-├── index.html                  # Homepage
-├── services.html               # Main services page
-├── services/                   # Individual service pages
-│   ├── bridges.html            # (Example would need to be created)
+├── index.html              # Homepage
+├── about.html              # About Us page
+├── services.html           # Services overview
+├── careers.html            # Careers page
+├── contact.html           # Contact page
+├── search.html            # Search functionality
+├── css/
+│   ├── styles.css         # Main stylesheet
+│   ├── service-page.css   # Service page specific styles
+│   ├── services.css       # Services overview styles
+│   └── search.css         # Search page styles
+├── js/
+│   ├── main.js           # Main JavaScript functionality
+│   └── search.js         # Search functionality
+├── services/
+│   ├── bridges.html
 │   ├── concrete-construction.html
-│   ├── varco-pruden-metal-buildings.html
-│   ├── machine-shop-welding-repairs.html
 │   ├── excavating-grading-paving.html
+│   ├── machine-shop-welding-repairs.html
 │   ├── rock-asphalt-products-services.html
-│   └── trucking-lowboy-services.html
-│
-├── css/                        # CSS stylesheets
-│   ├── styles.css              # Main stylesheet
-│   ├── service-page.css        # Styles for service pages
-│   └── services.css            # Styles for the main services page
-│
-├── js/                         # JavaScript files
-│   └── main.js                 # Main JavaScript file for animations and interactivity
-│
-├── organized-images/           # Images for the website
-│   ├── services/               # Service-specific images
-│   └── [numbered image files]  # Main website images
-│
-└── README.md                   # Project documentation
+│   ├── trucking-lowboy-services.html
+│   └── varco-pruden-metal-buildings.html
+└── organized-images/      # All website images and assets
 ```
 
-## Technology Stack
+## 🚀 Getting Started
 
-- HTML5
-- CSS3 (with modern features like Grid, Flexbox, Variables)
-- JavaScript (ES6+)
-- Font Awesome for icons
-- Google Fonts (Roboto and Montserrat)
+1. **Clone the repository**:
 
-## Responsive Design
+   ```bash
+   git clone https://github.com/timothyjjcrow/Kernen-Construction.git
+   ```
 
-The website is built with a mobile-first approach and includes:
+2. **Navigate to the project directory**:
 
-- Responsive navigation that converts to a hamburger menu on smaller screens
-- Flexible grid layouts that adapt to different screen sizes
-- Media queries for fine-tuning the layout at various breakpoints
-- Touch-friendly interactive elements
+   ```bash
+   cd Kernen-Construction
+   ```
 
-## Animation Features
+3. **Run a local server**:
 
-- Fade-in elements as the user scrolls down the page
-- Parallax scrolling effects on banner sections
-- Hover animations on service cards and buttons
-- Smooth scrolling for anchor links
-- Image slideshow with transition effects
+   ```bash
+   # Using Python
+   python3 -m http.server 5500
 
-## Browser Compatibility
+   # Using Node.js
+   npx live-server
 
-The website is designed to work on modern browsers:
+   # Using PHP
+   php -S localhost:5500
+   ```
 
-- Chrome
-- Firefox
-- Safari
-- Edge
+4. **Open your browser** and visit `http://localhost:5500`
 
-## Deployment Instructions
+## 📱 Browser Support
 
-1. **Upload Files**: Upload all files to your web hosting server, maintaining the directory structure.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-2. **Domain Setup**: Point your domain to the directory where you uploaded the files.
+## 🤝 Contributing
 
-3. **Create Additional Pages**: To complete the website, create the following pages using the existing templates:
+This is a business website for Kernen Construction. For any updates or improvements:
 
-   - about.html
-   - careers.html
-   - contact.html
-   - Remaining service pages in the services/ directory
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly across devices
+5. Submit a pull request
 
-4. **Custom Domain Configuration**: Update any hardcoded URLs if you're using a different domain than kernenconstruction.com.
+## 📞 Contact
 
-5. **Testing**: Test all links, forms, and responsive layouts on various devices.
+For website-related questions or business inquiries:
 
-## Maintenance
+- **Phone**: (707) 826-8686
+- **Email**: office@kernenconstruction.com
+- **Location**: Humboldt County, CA
 
-- To add new services, create a new service page in the services/ directory and update the navigation menu.
-- To update content, modify the HTML files directly.
-- To change styles, update the CSS files in the css/ directory.
-- To modify animations or interactivity, update the JavaScript in js/main.js.
+## 📄 License
 
-## Credits
-
-- Original website content: kernenconstruction.com
-- Icons: Font Awesome
-- Fonts: Google Fonts
-- Photos: Provided by Kernen Construction
+© 2025 Kernen Construction. All rights reserved.
