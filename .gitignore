@@ -1,0 +1,16 @@
+# Temporarily ignore largest image files (over 1MB)
+organized-images/8-kc-website-slideshow-template3.jpg
+organized-images/7-kc-website-slideshow-template3.jpg
+organized-images/3-machine-shop-2-4-2021-1200px.jpg
+organized-images/concrete-construction-3.jpg
+organized-images/Excavating:Grading:Paving\ 3.jpg
+
+# macOS files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+*.log 

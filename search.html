@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results - Kernen Construction</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="organized-images/1-home.jpg" alt="Kernen Construction" />
+          </a>
+        </div>
+        <nav>
+          <ul class="desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+              <a href="services.html"
+                >Services <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="services/bridges.html">Bridges</a></li>
+                <li>
+                  <a href="services/concrete-construction.html"
+                    >Concrete Construction</a
+                  >
+                </li>
+                <li>
+                  <a href="services/varco-pruden-metal-buildings.html"
+                    >Varco Pruden Metal Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="services/machine-shop-welding-repairs.html"
+                    >Machine Shop/Welding/Repairs</a
+                  >
+                </li>
+                <li>
+                  <a href="services/excavating-grading-paving.html"
+                    >Excavating/Grading/Paving</a
+                  >
+                </li>
+                <li>
+                  <a href="services/rock-asphalt-products-services.html"
+                    >Rock & Asphalt Products/Services</a
+                  >
+                </li>
+                <li>
+                  <a href="services/trucking-lowboy-services.html"
+                    >Trucking and Lowboy Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li>
+              <form id="site-search-form" class="search-form">
+                <input
+                  type="text"
+                  id="site-search-input"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  required
+                />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="mobile-dropdown">
+              <a href="services.html">Services</a>
+              <span class="mobile-dropdown-toggle"
+                ><i class="fas fa-plus"></i
+              ></span>
+              <ul class="mobile-dropdown-menu">
+                <li><a href="services/bridges.html">Bridges</a></li>
+                <li>
+                  <a href="services/concrete-construction.html"
+                    >Concrete Construction</a
+                  >
+                </li>
+                <li>
+                  <a href="services/varco-pruden-metal-buildings.html"
+                    >Varco Pruden Metal Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="services/machine-shop-welding-repairs.html"
+                    >Machine Shop/Welding/Repairs</a
+                  >
+                </li>
+                <li>
+                  <a href="services/excavating-grading-paving.html"
+                    >Excavating/Grading/Paving</a
+                  >
+                </li>
+                <li>
+                  <a href="services/rock-asphalt-products-services.html"
+                    >Rock & Asphalt Products/Services</a
+                  >
+                </li>
+                <li>
+                  <a href="services/trucking-lowboy-services.html"
+                    >Trucking and Lowboy Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li>
+              <form id="mobile-search-form" class="search-form">
+                <input
+                  type="text"
+                  id="mobile-search-input"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  required
+                />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section">
+      <div class="container">
+        <h1>Search Results</h1>
+        <div class="search-summary">
+          <p>
+            Found <span id="search-count">0</span> results for:
+            <span id="search-query" class="search-query-text"></span>
+          </p>
+        </div>
+
+        <!-- Search form for refining search -->
+        <div class="search-refine">
+          <form id="refine-search-form" class="search-form">
+            <input
+              type="text"
+              id="refine-search-input"
+              placeholder="Refine your search..."
+              aria-label="Refine search"
+              required
+            />
+            <button type="submit" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Results container -->
+        <div id="search-results" class="search-results-container">
+          <!-- Results will be populated by JavaScript -->
+          <div class="search-loading">
+            <p>Loading search results...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="organized-images/1-home.jpg" alt="Kernen Construction" />
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 2320 Glendale Drive,
+              Fortuna, CA 95540
+            </p>
+            <p><i class="fas fa-phone"></i> (707) 725-5111</p>
+            <p><i class="fas fa-fax"></i> (707) 725-5115</p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@kernenconstruction.com"
+                >info@kernenconstruction.com</a
+              >
+            </p>
+          </div>
+          <div class="footer-nav">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-hours">
+            <h3>Office Hours</h3>
+            <p><strong>Monday - Friday:</strong> 7:00am - 4:30pm</p>
+            <p><strong>Saturday & Sunday:</strong> Closed</p>
+            <div class="social-media">
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Kernen Construction. All rights reserved. | Website by
+            Precision Intermedia
+          </p>
+          <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+      // Initialize search refinement form
+      document.addEventListener("DOMContentLoaded", function () {
+        const refineForm = document.getElementById("refine-search-form");
+        const refineInput = document.getElementById("refine-search-input");
+
+        // Get current query from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get("q");
+
+        // Pre-fill the refinement input with current query
+        if (refineInput && query) {
+          refineInput.value = query;
+        }
+
+        // Handle refinement form submission
+        if (refineForm) {
+          refineForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const newQuery = refineInput.value.trim();
+
+            if (newQuery) {
+              window.location.href = `search.html?q=${encodeURIComponent(
+                newQuery
+              )}`;
+            }
+          });
+        }
+
+        // Also set up the mobile search form
+        const mobileForm = document.getElementById("mobile-search-form");
+        const mobileInput = document.getElementById("mobile-search-input");
+
+        if (mobileForm) {
+          mobileForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const mobileQuery = mobileInput.value.trim();
+
+            if (mobileQuery) {
+              window.location.href = `search.html?q=${encodeURIComponent(
+                mobileQuery
+              )}`;
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

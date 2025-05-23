@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Kernen Construction</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Contact Page Specific Styles */
+      .contact-hero {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url("organized-images/3-machine-shop-2-4-2021-1200px.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-top: 80px;
+      }
+
+      .contact-hero-content {
+        text-align: center;
+        max-width: 800px;
+        padding: 0 2rem;
+      }
+
+      .contact-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-hero-content p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .contact-main {
+        padding: 5rem 0;
+      }
+
+      .contact-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        padding: 0 2rem;
+      }
+
+      .location-section {
+        max-width: 1200px;
+        margin: 0 auto 4rem;
+        padding: 0 2rem;
+      }
+
+      .location-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .contact-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-card h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+        border-bottom: 2px solid var(--light-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-card p {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .contact-card i {
+        color: var(--primary-color);
+        margin-right: 10px;
+        min-width: 20px;
+        margin-top: 5px;
+      }
+
+      .map-container {
+        height: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .directions {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .directions h4 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-color);
+      }
+
+      .contact-form-section {
+        background-color: var(--light-color);
+        padding: 4rem 0;
+      }
+
+      .contact-form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .contact-form {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+      }
+
+      .contact-form h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: "Roboto", sans-serif;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        outline: none;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .btn-submit {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 4px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        text-transform: uppercase;
+      }
+
+      .btn-submit:hover {
+        background-color: #d17d00;
+      }
+
+      @media (max-width: 992px) {
+        .location-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .contact-hero {
+          height: 30vh;
+        }
+
+        .contact-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .contact-main {
+          padding: 3rem 0;
+        }
+
+        .map-container {
+          height: 250px;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .contact-hero {
+          height: 25vh;
+        }
+
+        .contact-hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .contact-main,
+        .contact-form-section {
+          padding: 2rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="organized-images/1-home.jpg" alt="Kernen Construction" />
+          </a>
+        </div>
+        <nav>
+          <ul class="desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+              <a href="services.html"
+                >Services <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="services/bridges.html">Bridges</a></li>
+                <li>
+                  <a href="services/concrete-construction.html"
+                    >Concrete Construction</a
+                  >
+                </li>
+                <li>
+                  <a href="services/varco-pruden-metal-buildings.html"
+                    >Varco Pruden Metal Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="services/machine-shop-welding-repairs.html"
+                    >Machine Shop/Welding/Repairs</a
+                  >
+                </li>
+                <li>
+                  <a href="services/excavating-grading-paving.html"
+                    >Excavating/Grading/Paving</a
+                  >
+                </li>
+                <li>
+                  <a href="services/rock-asphalt-products-services.html"
+                    >Rock & Asphalt Products/Services</a
+                  >
+                </li>
+                <li>
+                  <a href="services/trucking-lowboy-services.html"
+                    >Trucking and Lowboy Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li>
+              <form id="site-search-form" class="search-form">
+                <input
+                  type="text"
+                  id="site-search-input"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  required
+                />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="mobile-dropdown">
+              <a href="services.html">Services</a>
+              <span class="mobile-dropdown-toggle"
+                ><i class="fas fa-plus"></i
+              ></span>
+              <ul class="mobile-dropdown-menu">
+                <li><a href="services/bridges.html">Bridges</a></li>
+                <li>
+                  <a href="services/concrete-construction.html"
+                    >Concrete Construction</a
+                  >
+                </li>
+                <li>
+                  <a href="services/varco-pruden-metal-buildings.html"
+                    >Varco Pruden Metal Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="services/machine-shop-welding-repairs.html"
+                    >Machine Shop/Welding/Repairs</a
+                  >
+                </li>
+                <li>
+                  <a href="services/excavating-grading-paving.html"
+                    >Excavating/Grading/Paving</a
+                  >
+                </li>
+                <li>
+                  <a href="services/rock-asphalt-products-services.html"
+                    >Rock & Asphalt Products/Services</a
+                  >
+                </li>
+                <li>
+                  <a href="services/trucking-lowboy-services.html"
+                    >Trucking and Lowboy Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li>
+              <form id="mobile-search-form" class="search-form">
+                <input
+                  type="text"
+                  id="mobile-search-input"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  required
+                />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <h1>Contact Us</h1>
+        <p>
+          We are off Hwy 299 between Fieldbrook and Blue Lake in the eastern
+          Arcata area that shares a zip code with McKinleyville.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-main">
+      <div class="contact-intro">
+        <h2 class="section-title">Our Locations</h2>
+      </div>
+
+      <!-- Main Office -->
+      <div class="location-section">
+        <div class="location-container">
+          <div class="contact-card">
+            <h3>Main Office</h3>
+            <p>
+              <i class="fas fa-building"></i> Kernen Construction Building &
+              Engineering Contractors
+            </p>
+            <p><i class="fas fa-hard-hat"></i> Industrial & Commercial</p>
+            <p><i class="fas fa-id-card"></i> CA License No. 504091</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 2350 Glendale Drive,
+              McKinleyville, CA 95519
+            </p>
+            <p>
+              <i class="fas fa-envelope"></i> Mailing Address: PO Box 1340 Blue
+              Lake, CA 95525
+            </p>
+            <p><i class="fas fa-phone"></i> Office: (707) 826-8686</p>
+            <p><i class="fas fa-fax"></i> Fax: (707) 826-1888</p>
+            <p>
+              <i class="fas fa-envelope"></i> Email:
+              office@kernenconstruction.com
+            </p>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.893372944157!2d-124.03429192422933!3d40.97261267140661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d15a97e98b9105%3A0xed32f42b4c66f152!2s2350%20Glendale%20Dr%2C%20McKinleyville%2C%20CA%2095519!5e0!3m2!1sen!2sus!4v1716927834834!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asphalt Products -->
+      <div class="location-section">
+        <div class="location-container">
+          <div class="contact-card">
+            <h3>Asphalt Products, Sand & Gravel</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 1195 Hatchery Road, Arcata,
+              CA 95521
+            </p>
+            <p><i class="fas fa-phone"></i> Phone: (707) 825-8342</p>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.6736935848694!2d-123.80143892423239!3d40.6986553735205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d15706eded7cb5%3A0x19af5bb3b34dcd91!2s1195%20Hatchery%20Rd%2C%20Arcata%2C%20CA%2095521!5e0!3m2!1sen!2sus!4v1716927913399!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quarry Rock & Gravel -->
+      <div class="location-section">
+        <div class="location-container">
+          <div class="contact-card">
+            <h3>Quarry Rock & Gravel</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 2350 Glendale Drive,
+              McKinleyville, CA 95519
+            </p>
+            <p><i class="fas fa-phone"></i> Phone: (707) 826-9665</p>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.893372944157!2d-124.03429192422933!3d40.97261267140661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d15a97e98b9105%3A0xed32f42b4c66f152!2s2350%20Glendale%20Dr%2C%20McKinleyville%2C%20CA%2095519!5e0!3m2!1sen!2sus!4v1716927834834!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Machine Shop -->
+      <div class="location-section">
+        <div class="location-container">
+          <div class="contact-card">
+            <h3>Machine Shop/Welding/Repairs</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 2350 Glendale Drive,
+              McKinleyville, CA 95519
+            </p>
+            <p><i class="fas fa-phone"></i> Phone: (707) 826-1614</p>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.893372944157!2d-124.03429192422933!3d40.97261267140661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d15a97e98b9105%3A0xed32f42b4c66f152!2s2350%20Glendale%20Dr%2C%20McKinleyville%2C%20CA%2095519!5e0!3m2!1sen!2sus!4v1716927834834!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Miranda Quarry -->
+      <div class="location-section">
+        <div class="location-container">
+          <div class="contact-card">
+            <h3>Miranda Quarry Rock</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 234 Bear Butte Road,
+              Miranda, CA 95553
+            </p>
+            <p><i class="fas fa-phone"></i> Phone: (707) 498-1823</p>
+            <div class="directions">
+              <h4>Directions to Bear Butte Quarry</h4>
+              <p>
+                Take 101 South to Phillipsville/Miranda (exit 650). Turn left at
+                the stop sign, you'll drive under the overpass (#4-175). Turn
+                left again at the next stop sign, you'll now be parallel to the
+                river. The next available left turn is Bear Butte Road.
+              </p>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12335.598466269928!2d-123.78642635!3d40.23282175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d461270472a58d%3A0x5e8eccd346059bf3!2sBear%20Butte%20Rd%2C%20Miranda%2C%20CA%2095553!5e0!3m2!1sen!2sus!4v1716932612651!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trucking Services -->
+      <div class="location-section">
+        <div class="location-container">
+          <div class="contact-card">
+            <h3>Trucking & Lowboy Services</h3>
+            <p><i class="fas fa-phone"></i> Phone: (707) 826-9665</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Based at our main office in
+              McKinleyville
+            </p>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.893372944157!2d-124.03429192422933!3d40.97261267140661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54d15a97e98b9105%3A0xed32f42b4c66f152!2s2350%20Glendale%20Dr%2C%20McKinleyville%2C%20CA%2095519!5e0!3m2!1sen!2sus!4v1716927834834!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+      <div class="contact-form-container">
+        <h2 class="section-title">Send Us a Message</h2>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name*</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name*</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address*</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Comment or Message*</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="organized-images/1-home.jpg" alt="Kernen Construction" />
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Information</h3>
+            <p><strong>Office:</strong> (707) 826-8686</p>
+            <p>
+              <a href="mailto:office@kernenconstruction.com"
+                >office@kernenconstruction.com</a
+              >
+            </p>
+            <p>
+              <strong>Asphalt Products, Sand & Gravel:</strong> (707) 825-8342
+            </p>
+            <p><strong>Quarry Rock & Gravel:</strong> (707) 826-9665</p>
+            <p><strong>Miranda Quarry Rock & Gravel:</strong> (707) 498-1823</p>
+            <p><strong>Machine Shop/Welding/Repairs:</strong> (707) 826-1614</p>
+            <p><strong>Trucking Dispatch:</strong> (707) 826-9665</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="payment-methods">
+            <h3>Payment Methods</h3>
+            <div class="payment-icons">
+              <img src="organized-images/20-menu.jpg" alt="MasterCard" />
+              <img src="organized-images/21-menu.jpg" alt="Visa" />
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Kernen Construction. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+      // Form submission handling
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Basic form validation
+          const firstName = document.getElementById("firstName").value;
+          const lastName = document.getElementById("lastName").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          if (!firstName || !lastName || !email || !message) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          // In a real scenario, you would send the form data to a server here
+          // For now, just show a success message
+          alert("Thank you for your message! We will contact you soon.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

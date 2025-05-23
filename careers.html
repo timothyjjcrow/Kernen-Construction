@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers - Kernen Construction</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .careers-section {
+        padding: 120px 0 80px;
+      }
+
+      .careers-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .careers-content h2 {
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .careers-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .careers-content ul {
+        list-style: disc;
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .careers-content address {
+        font-style: normal;
+        margin: 2rem 0;
+      }
+
+      .pdf-download {
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      .pdf-download img {
+        max-width: 280px;
+        height: auto;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .pdf-download img:hover {
+        transform: scale(1.05);
+      }
+
+      .pdf-download p {
+        font-size: 0.9rem;
+        font-style: italic;
+        margin-top: 0.5rem;
+      }
+
+      .careers-note {
+        background-color: #f9f9f9;
+        padding: 1.5rem;
+        border-left: 4px solid var(--primary-color);
+        margin: 2rem 0;
+      }
+
+      .contact-email {
+        font-weight: bold;
+        color: var(--secondary-color);
+      }
+
+      .equal-opportunity {
+        text-align: center;
+        font-weight: bold;
+        margin: 2rem 0;
+      }
+
+      .careers-footnote {
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+
+      /* Footer Styles */
+      .footer-contact h3,
+      .footer-links h3,
+      .payment-methods h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+        color: #fff;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        margin-left: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: #ccc;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .payment-methods {
+        margin-top: 1rem;
+      }
+
+      .payment-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .payment-icons img {
+        height: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-links,
+        .payment-methods {
+          text-align: center;
+          margin-top: 2rem;
+        }
+
+        .payment-icons {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="organized-images/1-home.jpg" alt="Kernen Construction" />
+          </a>
+        </div>
+        <nav>
+          <ul class="desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+              <a href="services.html"
+                >Services <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="services/bridges.html">Bridges</a></li>
+                <li>
+                  <a href="services/concrete-construction.html"
+                    >Concrete Construction</a
+                  >
+                </li>
+                <li>
+                  <a href="services/varco-pruden-metal-buildings.html"
+                    >Varco Pruden Metal Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="services/machine-shop-welding-repairs.html"
+                    >Machine Shop/Welding/Repairs</a
+                  >
+                </li>
+                <li>
+                  <a href="services/excavating-grading-paving.html"
+                    >Excavating/Grading/Paving</a
+                  >
+                </li>
+                <li>
+                  <a href="services/rock-asphalt-products-services.html"
+                    >Rock & Asphalt Products/Services</a
+                  >
+                </li>
+                <li>
+                  <a href="services/trucking-lowboy-services.html"
+                    >Trucking and Lowboy Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="careers.html" class="active">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li>
+              <form id="site-search-form" class="search-form">
+                <input
+                  type="text"
+                  id="site-search-input"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  required
+                />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="mobile-dropdown">
+              <a href="services.html">Services</a>
+              <span class="mobile-dropdown-toggle"
+                ><i class="fas fa-plus"></i
+              ></span>
+              <ul class="mobile-dropdown-menu">
+                <li><a href="services/bridges.html">Bridges</a></li>
+                <li>
+                  <a href="services/concrete-construction.html"
+                    >Concrete Construction</a
+                  >
+                </li>
+                <li>
+                  <a href="services/varco-pruden-metal-buildings.html"
+                    >Varco Pruden Metal Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="services/machine-shop-welding-repairs.html"
+                    >Machine Shop/Welding/Repairs</a
+                  >
+                </li>
+                <li>
+                  <a href="services/excavating-grading-paving.html"
+                    >Excavating/Grading/Paving</a
+                  >
+                </li>
+                <li>
+                  <a href="services/rock-asphalt-products-services.html"
+                    >Rock & Asphalt Products/Services</a
+                  >
+                </li>
+                <li>
+                  <a href="services/trucking-lowboy-services.html"
+                    >Trucking and Lowboy Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="careers.html" class="active">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li>
+              <form id="mobile-search-form" class="search-form">
+                <input
+                  type="text"
+                  id="mobile-search-input"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  required
+                />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Careers Content -->
+    <section class="careers-section">
+      <div class="container">
+        <div class="careers-content">
+          <h1 class="section-title">Careers</h1>
+
+          <p>
+            Kernen Construction was established in 1986 and has developed many
+            long-term relationships with our clients. We feel this is due to
+            both our focus on customer service and quality of work.
+          </p>
+
+          <p>
+            If you excel in customer service and are experienced, detail
+            oriented and responsible, we are interested in knowing more about
+            you. While our services are widespread they are all related to our
+            core business – building and engineering construction. Once we have
+            reviewed your experience and skill set we can talk about specific
+            job openings.
+          </p>
+
+          <p>
+            Please fill out the application form and email it to:
+            <span class="contact-email">office@kernenconstruction.com</span> or
+            mail to:
+          </p>
+
+          <address>
+            Kernen Construction Building and Engineering Contractors<br />
+            2350 Glendale Drive<br />
+            McKinleyville, CA 95519
+          </address>
+
+          <p>We look forward to hearing from you!</p>
+
+          <div class="equal-opportunity">
+            Kernen Construction is an Equal Opportunity Employer
+          </div>
+
+          <div class="careers-note">
+            <p class="careers-footnote">
+              *All potential team members will need to pass a background check
+              and drug test.
+            </p>
+          </div>
+
+          <div class="pdf-download">
+            <h3>Employment Application</h3>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 2rem;
+              "
+            >
+              <!-- PDF Viewer -->
+              <div
+                style="
+                  width: 100%;
+                  max-width: 800px;
+                  height: 600px;
+                  margin-bottom: 2rem;
+                  border: 1px solid #ccc;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <object
+                  data="organized-images/Kernen-APPLICATION-EMPLOYMENT-2024-doc.pdf"
+                  type="application/pdf"
+                  width="100%"
+                  height="100%"
+                >
+                  <p>
+                    It appears your browser doesn't support embedded PDFs.
+                    <a
+                      href="Kernen-APPLICATION-EMPLOYMENT-2024-doc.pdf"
+                      target="_blank"
+                    >
+                      Click here to download the PDF </a
+                    >.
+                  </p>
+                </object>
+              </div>
+
+              <!-- Download Button -->
+              <a
+                href="Kernen-APPLICATION-EMPLOYMENT-2024-doc.pdf"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <i class="fas fa-download" style="margin-right: 8px"></i
+                >Download Application Form
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="organized-images/1-home.jpg" alt="Kernen Construction" />
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Information</h3>
+            <p><strong>Office:</strong> (707) 826-8686</p>
+            <p>
+              <a href="mailto:office@kernenconstruction.com"
+                >office@kernenconstruction.com</a
+              >
+            </p>
+            <p>
+              <strong>Asphalt Products, Sand & Gravel:</strong> (707) 825-8342
+            </p>
+            <p><strong>Quarry Rock & Gravel:</strong> (707) 826-9665</p>
+            <p><strong>Miranda Quarry Rock & Gravel:</strong> (707) 498-1823</p>
+            <p><strong>Machine Shop/Welding/Repairs:</strong> (707) 826-1614</p>
+            <p><strong>Trucking Dispatch:</strong> (707) 826-9665</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="payment-methods">
+            <h3>Payment Methods</h3>
+            <div class="payment-icons">
+              <img src="organized-images/20-menu.jpg" alt="MasterCard" />
+              <img src="organized-images/21-menu.jpg" alt="Visa" />
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Kernen Construction. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>
