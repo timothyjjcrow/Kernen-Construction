@@ -1,0 +1,21 @@
+{
+  "name": "Kernen Construction",
+  "short_name": "Kernen Construction",
+  "description": "Northern California Construction Services - Building & Engineering Contractors",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#e68a00",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
