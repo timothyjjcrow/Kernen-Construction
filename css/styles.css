@@ -228,7 +228,8 @@ nav {
   height: 3px;
   width: 100%;
   background-color: var(--dark-color);
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
 }
 
 .mobile-menu-icon.active span {
@@ -242,7 +243,7 @@ nav {
   left: 0;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   padding: 1rem;
   max-height: 80vh;
   overflow-y: auto;
@@ -250,7 +251,10 @@ nav {
   transform: translateY(-20px);
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    visibility 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-top: 2px solid var(--primary-color);
 }
 
 .mobile-menu.active {
@@ -263,6 +267,22 @@ nav {
 .mobile-menu li {
   padding: 0.8rem 0;
   border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu li:hover {
+  background-color: #f8f9fa;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--primary-color);
 }
 
 .mobile-dropdown {
@@ -288,12 +308,15 @@ nav {
   margin-top: 0.8rem;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.3s ease;
+  opacity: 0;
 }
 
 .mobile-dropdown-menu.active {
   display: block;
   max-height: 500px;
+  opacity: 1;
 }
 
 .mobile-dropdown-menu li {
@@ -549,7 +572,7 @@ footer {
 }
 
 .footer-logo img {
-  height: 70px;
+  height: 100px;
   margin-bottom: 1rem;
 }
 
@@ -586,6 +609,90 @@ footer {
   color: #ccc;
 }
 
+/* Simple footer layout for larger screens */
+@media (min-width: 769px) {
+  footer {
+    padding: 5rem 0 3rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .footer-logo img {
+    height: 120px;
+  }
+
+  .footer-contact h3,
+  .footer-links h3,
+  .payment-methods h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .footer-contact p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-links a {
+    color: #ccc;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
+
+  .payment-icons {
+    margin-top: 1rem;
+  }
+
+  .payment-icons img {
+    height: 35px;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-content {
+    max-width: 1400px;
+    padding: 0 3rem;
+  }
+
+  .footer-bottom {
+    max-width: 1400px;
+    padding: 2rem 3rem 0;
+  }
+}
+
 /* Parallax Effect */
 .parallax-section {
   background-position: center;
@@ -615,11 +722,13 @@ footer {
 
 @media (max-width: 768px) {
   header .container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .logo img {
-    width: 50px;
+    height: 45px;
   }
 
   .desktop-menu {
@@ -628,6 +737,11 @@ footer {
 
   .mobile-menu-icon {
     display: flex;
+    position: relative;
+  }
+
+  .mobile-menu {
+    top: 66px;
   }
 
   .slide-content {
@@ -643,6 +757,25 @@ footer {
   .services,
   .cta {
     padding: 3rem 0;
+  }
+
+  /* Fix parallax quality issues on mobile */
+  .cta {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .parallax-section {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
   }
 
   .welcome-text h2,
@@ -664,6 +797,7 @@ footer {
 
   .footer-logo img {
     margin: 0 auto 1rem;
+    height: 90px;
   }
 
   .payment-icons {
@@ -723,6 +857,26 @@ footer {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Ensure parallax sections maintain quality on small mobile */
+  .cta {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    padding: 4rem 0;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .parallax-section {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
   }
 
   .welcome-text h2,

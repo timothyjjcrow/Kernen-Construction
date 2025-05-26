@@ -45,11 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
       this.querySelector("span:nth-child(1)").style.transform =
         "rotate(45deg) translate(5px, 5px)";
       this.querySelector("span:nth-child(2)").style.opacity = "0";
+      this.querySelector("span:nth-child(2)").style.transform = "scaleX(0)";
       this.querySelector("span:nth-child(3)").style.transform =
-        "rotate(-45deg) translate(7px, -8px)";
+        "rotate(-45deg) translate(7px, -6px)";
     } else {
       this.querySelector("span:nth-child(1)").style.transform = "none";
       this.querySelector("span:nth-child(2)").style.opacity = "1";
+      this.querySelector("span:nth-child(2)").style.transform = "scaleX(1)";
       this.querySelector("span:nth-child(3)").style.transform = "none";
     }
   });
@@ -83,6 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileMenuIcon.querySelector("span:nth-child(1)").style.transform =
         "none";
       mobileMenuIcon.querySelector("span:nth-child(2)").style.opacity = "1";
+      mobileMenuIcon.querySelector("span:nth-child(2)").style.transform =
+        "scaleX(1)";
       mobileMenuIcon.querySelector("span:nth-child(3)").style.transform =
         "none";
     });
