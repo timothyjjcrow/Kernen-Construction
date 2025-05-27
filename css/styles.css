@@ -399,25 +399,34 @@ nav {
 
 .slide-content {
   position: absolute;
+  padding: 1.5rem;
+  left: 5%;
+  max-width: 90%;
   top: 50%;
-  left: 10%;
   transform: translateY(-50%);
-  max-width: 600px;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  padding: 2rem;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .slide-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
 }
 
 .slide-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide-content .btn {
+  align-self: flex-start;
+  white-space: nowrap;
+  margin-top: 0.5rem;
 }
 
 .prev-btn,
@@ -744,6 +753,7 @@ footer {
   .slide-content {
     left: 5%;
     max-width: 500px;
+    padding: 1.8rem;
   }
 
   .slide-content h1 {
@@ -784,12 +794,24 @@ footer {
   }
 
   .slide-content {
-    padding: 1rem;
-    bottom: 80px;
+    padding: 1.5rem;
+    left: 5%;
+    max-width: 90%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .slide-content h1 {
     font-size: 2rem;
+  }
+
+  .slide-content p {
+    font-size: 1rem;
+  }
+
+  .slide-content .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
   }
 
   .welcome,
@@ -929,9 +951,9 @@ footer {
     font-size: 1rem;
   }
 
-  .btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
+  .slide-content .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
   }
 
   .services-grid {
@@ -1009,8 +1031,11 @@ footer {
   }
 
   .slide-content {
-    padding: 0.75rem;
-    bottom: 60px;
+    padding: 1.5rem;
+    left: 5%;
+    max-width: 90%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .slide-content h1 {
@@ -1023,7 +1048,7 @@ footer {
     margin-bottom: 1rem;
   }
 
-  .btn {
+  .slide-content .btn {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
   }
