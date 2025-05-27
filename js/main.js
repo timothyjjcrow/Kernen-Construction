@@ -176,28 +176,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Touch events for mobile swiping
+    let startY = 0;
+
     slideshow.addEventListener("touchstart", function (e) {
       startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
       isDragging = true;
       clearInterval(slideInterval); // Pause autoplay when touching
     });
 
     slideshow.addEventListener("touchmove", function (e) {
       if (!isDragging) return;
-      e.preventDefault(); // Prevent scrolling while swiping
+
+      const currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const diffX = Math.abs(currentX - startX);
+      const diffY = Math.abs(currentY - startY);
+
+      // Only prevent default if horizontal movement is greater than vertical
+      // This allows vertical scrolling while enabling horizontal swiping
+      if (diffX > diffY && diffX > 10) {
+        e.preventDefault(); // Prevent scrolling only for horizontal swipes
+      }
     });
 
     slideshow.addEventListener("touchend", function (e) {
       if (!isDragging) return;
 
       endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
       isDragging = false;
 
       const threshold = 50; // Minimum distance for a swipe
-      const diff = startX - endX;
+      const diffX = startX - endX;
+      const diffY = Math.abs(startY - endY);
 
-      if (Math.abs(diff) > threshold) {
-        if (diff > 0) {
+      // Only trigger slide change if horizontal movement is greater than vertical
+      if (Math.abs(diffX) > threshold && Math.abs(diffX) > diffY) {
+        if (diffX > 0) {
           // Swiped left - go to next slide
           nextSlide();
         } else {

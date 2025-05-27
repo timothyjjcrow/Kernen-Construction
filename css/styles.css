@@ -22,6 +22,8 @@ body {
   color: var(--dark-color);
   background-color: #fff;
   overflow-x: hidden;
+  touch-action: manipulation; /* Optimize touch interactions */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 h1,
@@ -369,12 +371,14 @@ nav {
   position: relative;
   overflow: hidden;
   margin-top: 66px;
+  touch-action: pan-y pinch-zoom; /* Allow vertical scrolling and pinch zoom */
 }
 
 .slideshow {
   width: 100%;
   height: 100%;
   position: relative;
+  touch-action: pan-y pinch-zoom; /* Allow vertical scrolling and pinch zoom */
 }
 
 .slide {
@@ -411,6 +415,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  touch-action: manipulation; /* Optimize for touch interactions */
 }
 
 .slide-content h1 {
@@ -793,12 +798,21 @@ footer {
     top: 66px;
   }
 
+  .hero {
+    touch-action: pan-y pinch-zoom; /* Ensure vertical scrolling works */
+  }
+
+  .slideshow {
+    touch-action: pan-y pinch-zoom; /* Ensure vertical scrolling works */
+  }
+
   .slide-content {
     padding: 1.5rem;
     left: 5%;
     max-width: 90%;
     top: 50%;
     transform: translateY(-50%);
+    touch-action: manipulation; /* Optimize for touch */
   }
 
   .slide-content h1 {
