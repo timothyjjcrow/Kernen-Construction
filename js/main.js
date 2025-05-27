@@ -346,23 +346,56 @@ document.addEventListener("DOMContentLoaded", function () {
     initCarousel();
   }
 
-  // Fade-in effect on scroll
+  // Fade-in effect on scroll with improved performance and timing
+  let ticking = false;
+
   function checkFade() {
     fadeElements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
-      const elementVisible = 150;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
 
-      if (elementTop < window.innerHeight - elementVisible) {
-        element.classList.add("appear");
+      // More responsive threshold based on screen size
+      const threshold = windowHeight * 0.15; // 15% of viewport height
+      const triggerPoint = windowHeight - threshold;
+
+      // Check if element is in viewport and not already animated
+      if (
+        elementTop < triggerPoint &&
+        elementBottom > 0 &&
+        !element.classList.contains("appear")
+      ) {
+        // Add a small random delay to prevent all elements from animating at exactly the same time
+        const randomDelay = Math.random() * 100;
+
+        setTimeout(() => {
+          element.classList.add("appear");
+        }, randomDelay);
       }
     });
+
+    ticking = false;
   }
 
-  // Check fade elements on initial load
-  window.addEventListener("load", checkFade);
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(checkFade);
+      ticking = true;
+    }
+  }
 
-  // Check fade elements on scroll
-  window.addEventListener("scroll", checkFade);
+  // Throttled scroll event for better performance
+  function handleScroll() {
+    requestTick();
+  }
+
+  // Check fade elements on initial load with a slight delay
+  window.addEventListener("load", function () {
+    setTimeout(checkFade, 100);
+  });
+
+  // Use throttled scroll handler
+  window.addEventListener("scroll", handleScroll, { passive: true });
 
   // Parallax effect for sections with parallax-section class
   const parallaxSections = document.querySelectorAll(".parallax-section");
